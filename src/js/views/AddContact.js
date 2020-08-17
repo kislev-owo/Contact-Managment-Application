@@ -74,7 +74,7 @@ export const AddContact = () => {
 						type="button"
 						className="btn btn-primary form-control"
 						onClick={() => {
-							actions.añadirContactos(arrayContacto); // al precionar el boton de guardar uso la accion de añadirContactos y hago post con el arrayContact hacia la url
+							actions.añadirContactos(arrayContacto); // al presionar el boton de guardar uso la accion de añadirContactos y hago post con el arrayContact hacia la url
 						}}>
 						Guardar
 					</button>

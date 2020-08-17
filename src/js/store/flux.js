@@ -19,6 +19,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/kislev-owo")
 					.then(response => response.json())
 					.then(data => {
+						console.log("output", data);
 						setStore({ contacts: data });
 					});
 			},
@@ -36,7 +37,6 @@ const getState = ({ getStore, setStore, getActions }) => {
 						console.log("output", data);
 						alert("nuevo contacto añadido");
 						getActions().cargarContactos();
-						// props.history.push("/Contacts")
 					})
 					.catch(error => console.error("Error:", error));
 			},
@@ -47,10 +47,8 @@ const getState = ({ getStore, setStore, getActions }) => {
 					.then(response => response.json())
 					.then(data => {
 						console.log("delete", data);
-						getActions().añadirContactos();
-						alert("Contact Delete, OK!");
-
-						// props.history.push("/Contacts")
+						getActions().cargarContactos();
+						alert("contacto eliminado");
 					})
 					.catch(error => console.error("Error:", error));
 			},
@@ -65,10 +63,6 @@ const getState = ({ getStore, setStore, getActions }) => {
 					.then(response => response.json())
 					.then(data => {
 						alert("Success:", JSON.stringify(data));
-						//1.-para acceder a los metodos primera forma
-						//const actions = getActions();
-						//actions.loadContacts();
-						//2.- segunda forma
 						getActions().añadirContactos();
 					})
 					.catch(error => console.log("Error:", error));
@@ -80,3 +74,27 @@ const getState = ({ getStore, setStore, getActions }) => {
 };
 
 export default getState;
+/*
+
+
+const createUser = async username => {
+		const response = await fetch(`https://assets.breatheco.de/apis/fake/contact/agenda/kislev-owo`, {
+			method: "POST",
+			body: JSON.stringify([]),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		});
+		try {
+			if (response.ok) {
+				getTodos(userName);
+			} else {
+				console.log(
+					`response: ${response.status} ${response.statusText}`
+				);
+			}
+		} catch (error) {
+			console.log(`error: ${error}`);
+		}
+	};
+*/
