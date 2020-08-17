@@ -65,7 +65,7 @@ export const Contacts = () => {
 											<span className="text-muted small text-truncate">{item.email}</span>
 										</div>
 										<div className="col-2">
-											<Link to={"/EditInfo/" + index}>
+											<Link to={"/EditContact/" + index}>
 												<i className="fas fa-edit" />
 											</Link>
 											<i onClick={() => eliminarContactos(item.id)} className="fas fa-trash" />

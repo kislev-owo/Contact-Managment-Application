@@ -62,8 +62,8 @@ const getState = ({ getStore, setStore, getActions }) => {
 				})
 					.then(response => response.json())
 					.then(data => {
-						alert("Success:", JSON.stringify(data));
-						getActions().añadirContactos();
+						alert("se ha editado el contacto", JSON.stringify(data));
+						getActions().cargarContactos();
 					})
 					.catch(error => console.log("Error:", error));
 			}
