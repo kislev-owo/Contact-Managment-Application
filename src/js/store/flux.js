@@ -16,7 +16,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 		},
 		actions: {
 			cargarContactos: () => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/kislev-owo")
+				fetch("https://3000-d7f32510-6cc6-43be-a806-14de2b91dcd9.ws-us02.gitpod.io/contact/all")
 					.then(response => response.json())
 					.then(data => {
 						console.log("output", data);
@@ -25,7 +25,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 			},
 			añadirContactos: arrayContacto => {
 				console.log("input", arrayContacto);
-				fetch("https://assets.breatheco.de/apis/fake/contact/", {
+				fetch("https://3000-d7f32510-6cc6-43be-a806-14de2b91dcd9.ws-us02.gitpod.io/contact", {
 					method: "POST",
 					body: JSON.stringify(arrayContacto),
 					headers: {
@@ -41,7 +41,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 					.catch(error => console.error("Error:", error));
 			},
 			eliminarContactos: contact_id => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/" + contact_id, {
+				fetch("https://3000-d7f32510-6cc6-43be-a806-14de2b91dcd9.ws-us02.gitpod.io/delete/" + contact_id, {
 					method: "DELETE"
 				})
 					.then(response => response.json())
@@ -53,7 +53,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 					.catch(error => console.error("Error:", error));
 			},
 			editarContactos: (agenda, contact_id) => {
-				fetch("https://assets.breatheco.de/apis/fake/contact/" + contact_id, {
+				fetch("https://3000-d7f32510-6cc6-43be-a806-14de2b91dcd9.ws-us02.gitpod.io/contact/" + contact_id, {
 					method: "PUT",
 					body: JSON.stringify(agenda),
 					headers: {
